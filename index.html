@@ -15,9 +15,12 @@
         <figure class="header__figure">
             <img src="clase_1/img/corona-removebg-preview.png" alt="Logo del website Jose Corona">
         </figure>
-        <nav>
+        <figure class="burger__menu">
+            <img class="menu__img" src="clase_1/img/menu.png" alt="menú de hamburguesa">
+        </figure>
+        <nav class="menu">
             <ul class="header__nav-ul">
-                <li> <a href="#home"> Home </a> </li>
+                <li> <a href="#Home"> Home </a> </li>
                 <li> <a href="#skills"> Skills </a> </li>
                 <li> <a href="#projects"> Projects </a> </li>
                 <li> <a href="#contact"> Contact </a> </li>
@@ -37,6 +40,11 @@
         </figure>
     </div>
     </section>
+    
+  <!--  <div class="content__video-youtube">
+        <iframe class="video__youtube" src="https://www.youtube.com/embed/eBpdjKarVn4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    -->
 
     <section id="skills" class="skilss">  
     <div class="wrapper">
@@ -121,6 +129,36 @@
         <p>Created By: José Corona</p>
     </div>
     </footer>
+<script>
 
+    const changes = window.matchMedia("screen and (max-width:767px)");
+
+    const menu = document.querySelector(".menu");
+
+    const burgerButton = document.querySelector(".menu__img");
+                       
+    changes.addListener(changesValidation);
+
+    function changesValidation(event){
+        if(event.matches){
+            burgerButton.addEventListener("click",showHiden);
+        }
+        else{
+            burgerButton.removeEventListener("click",showHiden);
+        }
+    }
+
+    burgerButton.addEventListener("click",showHiden);
+    
+    function showHiden(){
+        if(menu.classList.contains("menu__showHiden")){
+            menu.classList.remove("menu__showHiden");
+        }
+        else{
+            menu.classList.add("menu__showHiden");
+        }
+}
+    
+</script>
 </body>
 </html>
